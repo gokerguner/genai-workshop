@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+google-genai==2.8.0
+pydantic
+httpx
+python-dotenv
+
+# --- Veri kaynağına göre ekle (örnekler) ---
+# wikipedia-api      # Wikipedia
+# feedparser         # RSS / arXiv

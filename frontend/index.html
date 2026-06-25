@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GenAI MVP</title>
+  <style>
+    :root {
+      --grass: #154318;
+      --pear: #A8E665;
+      --cloud: #EBF0E6;
+      --lime: #CDF447;
+      --dark-green: #062D0A;
+      --light-green: #D7F3B8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--cloud);
+      color: var(--dark-green);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+    header { text-align: center; margin-bottom: 1.5rem; }
+    h1 { color: var(--grass); margin: 0 0 .25rem; font-size: 1.8rem; }
+    p.sub { margin: 0; color: #4a6b4d; font-size: .95rem; }
+    .card {
+      background: #fff;
+      border: 1px solid var(--light-green);
+      border-radius: 16px;
+      padding: 1.5rem;
+      width: 100%;
+      max-width: 640px;
+      box-shadow: 0 4px 24px rgba(6, 45, 10, .06);
+    }
+    label { display: block; font-weight: 600; margin-bottom: .4rem; font-size: .9rem; }
+    input[type="text"] {
+      width: 100%;
+      padding: .8rem 1rem;
+      border: 1px solid var(--pear);
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+    }
+    input[type="text"]:focus { border-color: var(--grass); }
+    .actions { display: flex; gap: .75rem; margin-top: 1rem; flex-wrap: wrap; }
+    button {
+      flex: 1;
+      min-width: 140px;
+      padding: .8rem 1.2rem;
+      border: none;
+      border-radius: 10px;
+      background: var(--grass);
+      color: var(--lime);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .15s;
+    }
+    button:hover { opacity: .9; }
+    button:disabled { opacity: .5; cursor: not-allowed; }
+    #result {
+      margin-top: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: var(--light-green);
+      border-radius: 12px;
+      display: none;
+      white-space: pre-wrap;
+      line-height: 1.5;
+    }
+    #result.show { display: block; }
+    #result.error { background: #fde8e8; color: #9b1c1c; }
+    .source { margin-top: .75rem; font-size: .85rem; }
+    .source a { color: var(--grass); }
+    footer { margin-top: 2rem; font-size: .8rem; color: #6b836d; text-align: center; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GenAI MVP</h1>
+    <p class="sub">Ücretsiz veri kaynağı + Gemini ile çalışan örnek iskelet</p>
+  </header>
+
+  <main class="card">
+    <label for="query">Girdi</label>
+    <input id="query" type="text" placeholder="Bir konu, soru ya da URL gir..." />
+
+    <div class="actions">
+      <button id="run-btn">Çalıştır</button>
+    </div>
+
+    <div id="result"></div>
+  </main>
+
+  <footer>
+    Bu bir başlangıç şablonudur — <code>frontend/app.js</code> ve backend endpoint'lerini
+    kendi use-case'ine göre düzenle.
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
